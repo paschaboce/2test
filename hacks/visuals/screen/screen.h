@@ -1,0 +1,13 @@
+#pragma once
+class c_view_setup;
+struct rect_t;
+namespace n_screen
+{
+	struct impl_t {
+		bool on_draw_view_models( c_view_setup& setup );
+		void on_frame_stage_notify( int stage );
+	private:
+		void update_screen_effect_texture( int texture_index, int x, int y, int w, int h, bool dest_fullscreen = false, rect_t* actual_rect = { } );
+	};
+}
+inline n_screen::impl_t g_screen{ };
